@@ -9,8 +9,8 @@ function getMovieTitles(){
 		var start = uncutTitles[iterator].innerHTML.search(">") + 1;
 		var end = uncutTitles[iterator].innerHTML.search("</a>");
 		titles[iterator] = uncutTitles[iterator].innerHTML.substring(start,end);
-		checkNetflix(titles[iterator], years[iterator].innerHTML, iterator);
-		//console.log(titles[iterator] + " : " + years[iterator].innerHTML);
+		checkNetflix(titles[iterator], years[iterator].innerHTML.substring(0,4), iterator);
+		//console.log(titles[iterator] + " : " + years[iterator].innerHTML.substring(0,4));
 		iterator++;
 	}
 }
