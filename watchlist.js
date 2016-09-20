@@ -24,7 +24,7 @@ function checkNetflix(title, year, iterator){
 		if (xmlhttp.readyState == 4) {
 			var movie = JSON.parse(xmlhttp.responseText);
 			if(movie.show_id && movie.release_year == year){
-				document.getElementsByClassName("lister-item-header")[iterator].innerHTML += "<span><a href=\"http://www.netflix.com/WiPlayer?movieid=" + movie.show_id + "\" target=\"_blank\" style=\"margin-left: 20px;\"><img style=\"width: 15px;\" src=\"http://i.imgur.com/XfOF49Z.png\"></a></span>";
+				document.getElementsByClassName("lister-item-header")[iterator].innerHTML += "<span><a href=\"http://www.netflix.com/WiPlayer?movieid=" + movie.show_id + "\" target=\"_blank\" style=\"margin-left: 20px;\"><img style=\"width: 15px;\" src=\"" + chrome.extension.getURL("icons/netflix_black.png") + "\"></a></span>";
 			}
 		}
 	};

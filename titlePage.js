@@ -32,7 +32,7 @@ function checkNetflix(title, year){
 				var beginning = document.getElementsByClassName("showtime full-table")[0].innerHTML.substring(0, document.getElementsByClassName("showtime full-table")[0].innerHTML.search("</script>") + 9);
 				var end = document.getElementsByClassName("showtime full-table")[0].innerHTML.substring(document.getElementsByClassName("showtime full-table")[0].innerHTML.search("</script>") + 9);
 				var middle = "<style>.secondary-watch-option:hover{ background-color: #136cb2 !important; cursor: pointer !important; }</style>" +
-				"<div title=\"On Netflix\" class=\"watch-option secondary-watch-option \" onmouseover=\"document.getElementById('imageToSwap').src = 'http://i.imgur.com/XMwGxNE.png'\" onmouseout=\"document.getElementById('imageToSwap').src = 'http://i.imgur.com/lWa53ao.png'\" onclick=\"window.open('http://www.netflix.com/WiPlayer?movieid=" + movie.show_id + "')\"><div><img id=\"imageToSwap\" src= \"http://i.imgur.com/lWa53ao.png\" style=\"height: 30px;\"></div><div class=\"secondary-info\">ON&nbsp;NETFLIX</div></div>";
+				"<div title=\"On Netflix\" class=\"watch-option secondary-watch-option \" onmouseover=\"document.getElementById('imageToSwap').src = '" + chrome.extension.getURL("icons/netflix_white.png") + "'\" onmouseout=\"document.getElementById('imageToSwap').src = '" + chrome.extension.getURL("icons/netflix_blue.png") + "'\" onclick=\"window.open('http://www.netflix.com/WiPlayer?movieid=" + movie.show_id + "')\"><div><img id=\"imageToSwap\" src= \"" + chrome.extension.getURL("icons/netflix_blue.png") + "\" style=\"height: 30px;\"></div><div class=\"secondary-info\">ON&nbsp;NETFLIX</div></div>";
 				document.getElementsByClassName("showtime full-table")[0].innerHTML = beginning + middle + end;
 			}
 		}

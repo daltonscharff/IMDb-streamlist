@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "IMDb Streamlist",
-  "version": "1.0",
+  "version": "1.2",
 
   "description": "See if movies in your IMDb watchlist are available for instant streaming.",
 
@@ -16,6 +16,12 @@
       "matches": ["*://*.imdb.com/*/watchlist*", "*://*.imdb.com/title/*"],
       "js": ["watchlist.js", "titlePage.js"]
     }
-  ] 
+  ],
+
+  "web_accessible_resources": [
+    "icons/netflix_black.png",
+    "icons/netflix_blue.png",
+    "icons/netflix_white.png"    
+  ]
 
 }
