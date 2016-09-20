@@ -1,4 +1,6 @@
-getMovieTitles();
+if(document.URL.includes("/watchlist")){
+	getMovieTitles();
+}
 
 function getMovieTitles(){
 	var uncutTitles = document.getElementsByClassName("lister-item-header");
@@ -28,11 +30,3 @@ function checkNetflix(title, year, iterator){
 	};
 	xmlhttp.send();
 }
-
-/*TODO:
-*Add buttons for Hulu and Amazon
-*Add buttons for search pages of IMDb
-*/
-
-//Hulu:http://i.imgur.com/i3zEJV9.png
-//Amazon:http://i.imgur.com/0B4C2Eq.png
