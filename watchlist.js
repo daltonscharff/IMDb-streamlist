@@ -24,7 +24,21 @@ function checkNetflix(title, year, iterator){
 		if (xmlhttp.readyState == 4) {
 			var movie = JSON.parse(xmlhttp.responseText);
 			if(movie.show_id && movie.release_year == year){
-				document.getElementsByClassName("lister-item-header")[iterator].innerHTML += "<span><a href=\"http://www.netflix.com/WiPlayer?movieid=" + movie.show_id + "\" target=\"_blank\" style=\"margin-left: 20px;\"><img style=\"width: 15px;\" src=\"" + chrome.extension.getURL("icons/netflix_black.png") + "\"></a></span>";
+				var span = document.createElement('SPAN');
+				var a = document.createElement('A');
+				a.href = "http://www.netflix.com/WiPlayer?movieid=" + movie.show_id;
+				a.style.marginLeft = "20px";
+				a.target = "_blank";
+				var img = document.createElement('IMG');
+				img.src = chrome.extension.getURL("icons/netflix_black.png");
+				img.style.width = "15px";
+				a.appendChild(img);
+				span.appendChild(a);
+				console.log(chrome.extension.getURL("icons/netflix_black.png"));
+				
+				document.getElementsByClassName("lister-item-header")[iterator].appendChild(span); 
+				
+				//document.getElementsByClassName("lister-item-header")[iterator].innerHTML = "<span><a href=\"http://www.netflix.com/WiPlayer?movieid=" + movie.show_id + "\" target=\"_blank\" style=\"margin-left: 20px;\"><img style=\"width: 15px;\" src=\"" + chrome.extension.getURL("icons/netflix_black.png") + "\"></a></span>"; 
 			}
 		}
 	};
