@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "IMDb Streamlist",
-  "version": "1.2",
+  "version": "1.2.1",
 
   "description": "See if movies in your IMDb watchlist are available for instant streaming.",
 
